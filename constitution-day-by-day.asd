@@ -6,19 +6,35 @@
   :license  "GPLv3"
   :version "0.0.1"
   :serial t
+  :depends-on (#:spinneret
+               #:hunchentoot
+               #:snooze
+               #:quri
+               #:dexador
+               #:cl-json
+               #:clack
+               #:fset
+               #:str
+               #:mito
+               #:sxql
+               #:unix-opts
+               #:trivia
+               #:alexandria
+               #:closer-mop)
   :components ((:module "src"
                 :components
                 ((:file "package")
-                 (:file "constitution-day-by-day")))))
+                 (:file "constitution-day-by-day"))))
+  :in-order-to ((test-op (test-op "constitution-day-by-day/tests"))))
 
-(asdf:defsystem #:constitution-day-by-day
+(asdf:defsystem "constitution-day-by-day/tests"
   :author "David Rueda"
   :licence "GPLv3"
   :depends-on ("constitution-day-by-day"
                "rove")
-  :components ((:module
-                "tests"
+  :description "Test system for constitution-day-by-day"
+  :components ((:module "tests"
                                         ;:components
                                         ;(())
-                ))
+                        ))
   :perform (test-op (op c) (symbol-call :rove :run c)))
