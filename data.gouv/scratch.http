@@ -1,0 +1,7 @@
+:api = https://www.data.gouv.fr/api/1
+
+# ORGANIZATIONS
+GET :api/organizations
+
+# DATASETS
+GET :api/datasets

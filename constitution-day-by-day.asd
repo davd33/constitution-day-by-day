@@ -11,6 +11,7 @@
                #:snooze
                #:quri
                #:dexador
+               #:lquery
                #:cl-json
                #:clack
                #:fset

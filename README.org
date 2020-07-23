@@ -1,0 +1,8 @@
+#+TITLE: constitution-day-by-day
+#+AUTHOR: David Rueda <davd33@gmail.com>
+
+Share one article of the French constitution (all 4 texts) every day.
+
+* License
+
+GPLv3
