@@ -12,6 +12,7 @@
                #:quri
                #:dexador
                #:lquery
+               #:cl-ppcre
                #:cl-json
                #:clack
                #:fset
