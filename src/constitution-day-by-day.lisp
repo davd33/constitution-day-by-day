@@ -32,10 +32,9 @@ It can be one of:
          ;; retrieve the right div
          (constitution-1958 (elt ($ constitution-1958-html ".content-article" (text)) 0))
          ;; split text by title
-         (c-by-title (cl-ppcre:split "Titre *([A-Z]*( bis)?) *-[^A-Za-z]*" constitution-1958
-                                     :with-registers-p t)))
+         (c-by-title (constitution-titles:split-by-titles constitution-1958)))
     (loop for title in c-by-title
        for i from 1 upto 20
        do (let ((t-by-article 0))
             (format t "~&Title ~d" i)))
-    constitution-1958))
+    :ok))

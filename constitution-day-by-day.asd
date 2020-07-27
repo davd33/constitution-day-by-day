@@ -27,7 +27,9 @@
                 :components
                 ((:file "package")
                  (:file "mop")
-                 (:file "constitution-day-by-day"))))
+                 (:file "constitution-day-by-day")
+                 (:file "constitution-titles")
+                 (:file "constitution-articles"))))
   :in-order-to ((test-op (test-op "constitution-day-by-day/tests"))))
 
 (asdf:defsystem "constitution-day-by-day/tests"
