@@ -26,6 +26,7 @@
   :components ((:module "src"
                 :components
                 ((:file "package")
+                 (:file "mop")
                  (:file "constitution-day-by-day"))))
   :in-order-to ((test-op (test-op "constitution-day-by-day/tests"))))
 
