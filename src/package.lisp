@@ -17,14 +17,15 @@
   (:use #:cl #:lquery)
   (:export #:split-by-titles
            #:title
-           #:index
-           #:name
-           #:bis-p
-           #:rest))
+           #:title-index
+           #:title-name
+           #:title-bis-p
+           #:title-articles))
 
 (defpackage #:constitution-articles
   (:use #:cl #:lquery)
   (:export #:split-by-articles
            #:article
-           #:name
-           #:text))
+           #:make-article
+           #:article-index
+           #:article-text))

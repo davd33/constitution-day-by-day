@@ -2,6 +2,10 @@
 
 (in-package #:constitution-day-by-day)
 
+(defvar *constitution-1958* nil)
+
+(defparameter *debug* nil)
+
 (defparameter constitution-1958-url
   "https://www.legifrance.gouv.fr/Droit-francais/Constitution/Constitution-du-4-octobre-1958")
 
@@ -31,10 +35,7 @@ It can be one of:
          (constitution-1958-html (elt (parse-html (dex:get constitution-1958-url)) 2))
          ;; retrieve the right div
          (constitution-1958 (elt ($ constitution-1958-html ".content-article" (text)) 0))
-         ;; split text by title
+         ;; split text by title/articles
          (c-by-title (constitution-titles:split-by-titles constitution-1958)))
-    (loop for title in c-by-title
-       for i from 1 upto 20
-       do (let ((t-by-article 0))
-            (format t "~&Title ~d" i)))
-    :ok))
+    (when *debug* (setf *constitution-1958* constitution-1958))
+    c-by-title))

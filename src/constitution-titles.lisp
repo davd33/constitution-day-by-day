@@ -10,7 +10,7 @@ Return a list of instances of the CONSTITUTION-TITLES:TITLE defstruct."
          (re-rest (rest re-res)))
     (cons
      (make-title :index 0
-                 :rest re-first)
+                 :articles (constitution-articles:make-article :text re-first))
      (let ((title+articles nil))
        (loop
           for i from 0 below (1- (length re-res)) by 3
@@ -23,10 +23,11 @@ Return a list of instances of the CONSTITUTION-TITLES:TITLE defstruct."
           collect (make-title :index (nth i re-rest)
                               :name (first title+articles)
                               :bis-p (not (null (nth (1+ i) re-rest)))
-                              :rest (second title+articles)))))))
+                              :articles (constitution-articles:split-by-articles
+                                         (second title+articles))))))))
 
 (defstruct title
   index
   name
   (bis-p nil)
-  rest)
+  articles)
