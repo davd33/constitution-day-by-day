@@ -26,10 +26,15 @@
   :components ((:module "src"
                 :components
                 ((:file "package")
+                 (:file "resources")
                  (:file "mop")
+                 (:file "jsons")
                  (:file "constitution-day-by-day")
                  (:file "constitution-titles")
-                 (:file "constitution-articles"))))
+                 (:file "constitution-articles")
+                 (:file "api")
+                 (:file "html")
+                 (:file "web-site"))))
   :in-order-to ((test-op (test-op "constitution-day-by-day/tests"))))
 
 (asdf:defsystem "constitution-day-by-day/tests"

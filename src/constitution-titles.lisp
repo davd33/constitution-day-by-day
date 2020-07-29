@@ -10,7 +10,7 @@ Return a list of instances of the CONSTITUTION-TITLES:TITLE defstruct."
          (re-rest (rest re-res)))
     (cons
      (make-title :index 0
-                 :articles (constitution-articles:make-article :text re-first))
+                 :articles (list (constitution-articles:make-article :text re-first)))
      (let ((title+articles nil))
        (loop
           for i from 0 below (1- (length re-res)) by 3

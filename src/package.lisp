@@ -11,7 +11,8 @@
            #:with-renamed-slot))
 
 (defpackage #:constitution-day-by-day
-  (:use #:cl #:lquery))
+  (:use #:cl #:lquery)
+  (:export #:extract-article-constitution))
 
 (defpackage #:constitution-titles
   (:use #:cl #:lquery)
@@ -29,3 +30,28 @@
            #:make-article
            #:article-index
            #:article-text))
+
+(defpackage #:jsons
+  (:use #:cl)
+  (:export #:get-in
+           #:add-value
+           #:type-compatible-p))
+
+(defpackage #:resources
+  (:use #:cl)
+  (:export #:*profile*
+           #:*system*
+           #:resource))
+
+(defpackage #:api
+  (:use #:cl #:snooze #:jsons #:alexandria #:resources)
+  (:export #:start
+           #:stop))
+
+(defpackage #:html
+  (:use #:cl #:spinneret #:alexandria)
+  (:export #:article-today))
+
+(defpackage #:web-site
+  (:use #:cl #:snooze #:jsons #:alexandria)
+  (:export #:home))
