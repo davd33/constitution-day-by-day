@@ -1,6 +1,6 @@
 (in-package :html)
 
-(defparameter *page-title* "Constitution française au quotidien.")
+(defparameter *page-title* "Constitution française.")
 
 (defmacro css (&body styles)
   "Takes 1..n CSS instructions as 2-elements lists, then returns a css formatted string.
@@ -47,7 +47,8 @@ for a translation split into a list of several strings.
 
 (defun article-today (title article)
   "Display the article of today."
-  (with-page (:title title :image-path nil)
-    (:h1 (str:concat "Article " (constitution-articles:article-index article) "."))
+  (with-page (:title *page-title* :image-path nil)
+    (:h1 title)
+    (:h2 (str:concat "Article " (constitution-articles:article-index article) "."))
     (:p (constitution-articles:article-text article))
     ))
