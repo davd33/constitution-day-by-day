@@ -12,7 +12,7 @@
   (setf *constitution-1958* (constitution-day-by-day:extract-article-constitution)))
 
 ;;; HOME OF WEBSITE
-(defroute home
+(defroute random-article
   (:get "text/html")
   (build-spinneret-html-response
     (let* ((title-i (random (length *constitution-1958*)))
