@@ -9,7 +9,7 @@
 
 (progn
   (format t "Retrieve Constitution from Legifrance...")
-  (setf *constitution-1958* (constitution-day-by-day:extract-article-constitution)))
+  (setf *constitution-1958* (constitution-day-by-day:extract-constitution-1958)))
 
 ;;; HOME OF WEBSITE
 (defroute random-article

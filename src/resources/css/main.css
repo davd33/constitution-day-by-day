@@ -18,7 +18,7 @@ html, body {
     margin: auto;
     border: 2px
     box-shadow: 2px 2px 0 #594302;
-    background: rgba(242,209,179,.7);
+    background: white;
     opacity: .8;
     padding: 0 10px;
 }

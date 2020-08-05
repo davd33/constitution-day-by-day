@@ -12,7 +12,7 @@
 
 (defpackage #:constitution-day-by-day
   (:use #:cl #:lquery)
-  (:export #:extract-article-constitution))
+  (:export #:extract-constitution-1958))
 
 (defpackage #:constitution-titles
   (:use #:cl #:lquery)
