@@ -28,4 +28,5 @@
   (stop)
   (setq *server*
         (hunchentoot:start (make-instance 'snooze-acceptor :port port)))
-  (format t "Program started: Open now the following URL in your web browser: http://localhost:5000~2%"))
+  (web-site:set-constitution-1958 (constitution-day-by-day:extract-constitution-1958))
+  (format t "~%Program started: Open now the following URL in your web browser: http://localhost:5000~2%"))

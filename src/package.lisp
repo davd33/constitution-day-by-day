@@ -1,5 +1,11 @@
 ;;;; package.lisp
 
+(defpackage #:alists
+  (:use #:cl #:alexandria)
+  (:export #:aconses
+           #:deep-acons
+           #:merge-acons))
+
 (defpackage #:mop
   (:use #:cl #:alexandria)
   (:export #:make-mapper
@@ -21,7 +27,11 @@
            #:title-index
            #:title-name
            #:title-bis-p
-           #:title-articles))
+           #:title-articles
+           #:title-contents
+           #:article
+           #:article-index
+           #:article-contents))
 
 (defpackage #:constitution-articles
   (:use #:cl #:lquery)
@@ -29,7 +39,7 @@
            #:article
            #:make-article
            #:article-index
-           #:article-text))
+           #:article-contents))
 
 (defpackage #:jsons
   (:use #:cl)
@@ -54,4 +64,5 @@
 
 (defpackage #:web-site
   (:use #:cl #:snooze #:jsons #:alexandria)
-  (:export #:home))
+  (:export #:home
+           #:set-constitution-1958))

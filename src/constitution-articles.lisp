@@ -15,4 +15,4 @@ Return a list of instances of the CONSTITUTION-ARTICLES:ARTICLE defstruct."
 
 
 (defstruct article
-  index text)
+  index contents)

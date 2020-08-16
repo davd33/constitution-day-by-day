@@ -11,14 +11,15 @@
 
 (defun extract-constitution-1958 ()
   "Download and html-parse all the french constitution."
+  (format t "~%Retrieving Constitution from Legifrance...")
   (let* (;; http get the 1958 constitution
          (constitution-1958-html (elt (parse-html (dex:get constitution-1958-url)) 2))
          ;; retrieve the right elements
          (constitution-1958 ($ constitution-1958-html
-                               ".content-article > *"
-                               #'(lambda (found-elts)
-                                   (loop for elt across found-elts
-                                      collect
+                              ".content-article > *"
+                              #'(lambda (found-elts)
+                                  (loop for elt across found-elts
+                                        collect
                                         (cond ((or (string= "ul" (plump-dom:tag-name elt))
                                                    (string= "p" (plump-dom:tag-name elt)))
                                                elt)

@@ -7,9 +7,8 @@
 
 (defvar *constitution-1958* nil)
 
-(progn
-  (format t "Retrieve Constitution from Legifrance...")
-  (setf *constitution-1958* (constitution-day-by-day:extract-constitution-1958)))
+(defun set-constitution-1958 (constitution-1958)
+  (setf *constitution-1958* constitution-1958))
 
 ;;; HOME OF WEBSITE
 (defroute random-article
@@ -21,4 +20,4 @@
            (title-articles (constitution-titles:title-articles chosen-title))
            (article-i (random (length title-articles)))
            (chosen-article (nth article-i title-articles)))
-     (html:article-today title-name chosen-article))))
+      (html:article-today title-name chosen-article))))
