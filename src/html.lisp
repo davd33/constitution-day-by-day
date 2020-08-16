@@ -49,6 +49,6 @@ for a translation split into a list of several strings.
   "Display the article of today."
   (with-page (:title *page-title* :image-path nil)
     (:h1 title)
-    (:h2 (str:concat "Article " (constitution-articles:article-index article) "."))
-    (:p (constitution-articles:article-text article))
+    (:h2 (str:concat "Article " (constitution-titles:article-index article) "."))
+    (:p (constitution-titles:article-contents article))
     ))

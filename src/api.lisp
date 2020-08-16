@@ -25,8 +25,9 @@
   (when *server* (hunchentoot:stop *server*) (setq *server* nil)))
 
 (defun start (&key (port 5000))
+  "Start the HTTP server, download/parse the constitution of 1958."
   (stop)
   (setq *server*
         (hunchentoot:start (make-instance 'snooze-acceptor :port port)))
   (web-site:set-constitution-1958 (constitution-day-by-day:extract-constitution-1958))
-  (format t "~%Program started: Open now the following URL in your web browser: http://localhost:5000~2%"))
+  (format t "~%Program started: Open now the following URL in your web browser: http://localhost:~A~2%" port))
