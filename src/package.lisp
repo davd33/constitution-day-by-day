@@ -33,14 +33,6 @@
            #:article-index
            #:article-contents))
 
-(defpackage #:constitution-articles
-  (:use #:cl #:lquery)
-  (:export #:split-by-articles
-           #:article
-           #:make-article
-           #:article-index
-           #:article-contents))
-
 (defpackage #:jsons
   (:use #:cl)
   (:export #:get-in

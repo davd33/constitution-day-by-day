@@ -31,7 +31,6 @@
                  (:file "jsons")
                  (:file "constitution-day-by-day")
                  (:file "constitution-titles")
-                 (:file "constitution-articles")
                  (:file "api")
                  (:file "html")
                  (:file "web-site"))))
